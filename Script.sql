@@ -96,7 +96,7 @@ create table if not exists "productRatings"(
 "id" serial primary key,
 "productId" int not null,
 foreign key ("productId") references "products"(id),
-"rate" int (5),
+"rate" int,
 "reviewMessege" text,
 "usersId" int not null,
 foreign key ("usersId") references "users"(id),
