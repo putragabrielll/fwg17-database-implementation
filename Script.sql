@@ -176,6 +176,7 @@ VALUES
     (19, 'Promo 19', 'DISCOUNT15', 'Diskon 15%', 0.15, TRUE, 25000, 45000, '2023-11-08 17:32:17.309', NULL),
     (20, 'Promo 20', 'SAVETODAY', 'Potongan 20%', 0.20, TRUE, 30000, 50000, '2023-11-08 17:32:17.309', NULL);
     
+    
 INSERT INTO "products" ("id", "name", "price", "image", "description", "discount", "isRecommended", "qty", "isActive", "createdAt", "updatedAt")
 VALUES
     (1, 'Cappuccino', 15000, 'cappuccino.jpg', 'Cappuccino is a coffee drink that is made with espresso and steamed milk.', 5000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
@@ -228,4 +229,60 @@ VALUES
     (48, 'Caramel Macchiato', 19000, 'caramelmachiato.jpg', 'Macchiato dengan karamel', 6000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
     (49, 'Hazelnut Latte', 20000, 'hazelnutlatte.jpg', 'Latte dengan rasa hazelnut', 7000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL);
     
+INSERT INTO "productSize" ("id", "size", "additionalPrice", "createdAt", "updatedAt")
+VALUES
+    (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
+    (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
+    (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
     
+INSERT INTO "productVariant" ("id", "name", "additionalPrice", "createdAt", "updatedAt")
+VALUES  
+	(1, 'Ice', 2000, 2023-11-09 08:49:15.782, NULL)
+	(2, 'Hot', 1000, 2023-11-09 08:49:15.785, NULL);
+	
+INSERT INTO "categories" ("id", "name", "createdAt", "updatedAt")
+VALUES
+    (1, 'Kopi Hitam', '2023-11-08 17:32:17.309', NULL),
+    (2, 'Kopi dengan Susu', '2023-11-08 17:32:17.309', NULL),
+    (3, 'Minuman Cokelat', '2023-11-08 17:32:17.309', NULL),
+    (4, 'Minuman Teh', '2023-11-08 17:32:17.309', NULL),
+    (5, 'Minuman Smoothie', '2023-11-08 17:32:17.309', NULL);
+    
+INSERT INTO "tags" ("id", "name", "createdAt", "updatedAt")
+VALUES
+    (1, 'Kopi', '2023-11-08 17:32:17.309', NULL),
+    (2, 'Espresso', '2023-11-08 17:32:17.309', NULL),
+    (3, 'Cappuccino', '2023-11-08 17:32:17.309', NULL),
+    (4, 'Latte', '2023-11-08 17:32:17.309', NULL),
+    (5, 'Mocha', '2023-11-08 17:32:17.309', NULL),
+    (6, 'Americano', '2023-11-08 17:32:17.309', NULL),
+    (7, 'Macchiato', '2023-11-08 17:32:17.309', NULL),
+    (8, 'Cortado', '2023-11-08 17:32:17.309', NULL),
+    (9, 'Flat White', '2023-11-08 17:32:17.309', NULL),
+    (10, 'Affogato', '2023-11-08 17:32:17.309', NULL),
+    (11, 'Ristretto', '2023-11-08 17:32:17.309', NULL),
+    (12, 'Doppio', '2023-11-08 17:32:17.309', NULL),
+    (13, 'Irish Coffee', '2023-11-08 17:32:17.309', NULL),
+    (14, 'Milkshake', '2023-11-08 17:32:17.309', NULL),
+    (15, 'Iced Tea', '2023-11-08 17:32:17.309', NULL),
+    (16, 'Hot Chocolate', '2023-11-08 17:32:17.309', NULL),
+    (17, 'Fruit Smoothie', '2023-11-08 17:32:17.309', NULL),
+    (18, 'Green Tea Latte', '2023-11-08 17:32:17.309', NULL),
+    (19, 'Iced Coffee', '2023-11-08 17:32:17.309', NULL),
+    (20, 'Black Tea', '2023-11-08 17:32:17.309', NULL),
+    (21, 'Chai Latte', '2023-11-08 17:32:17.309', NULL),
+    (22, 'Cold Brew', '2023-11-08 17:32:17.309', NULL),
+    (23, 'Peppermint Mocha', '2023-11-08 17:32:17.309', NULL),
+    (24, 'Lavender Latte', '2023-11-08 17:32:17.309', NULL),
+    (25, 'Caramel Macchiato', '2023-11-08 17:32:17.309', NULL),
+    (26, 'Hazelnut Latte', '2023-11-08 17:32:17.309', NULL),
+    (27, 'Turmeric Latte', '2023-11-08 17:32:17.309', NULL),
+    (28, 'Mint Chocolate', '2023-11-08 17:32:17.309', NULL),
+    (29, 'Chamomile Tea', '2023-11-08 17:32:17.309', NULL),
+    (30, 'White Mocha', '2023-11-08 17:32:17.309', NULL),
+    (31, 'Matcha Latte', '2023-11-08 17:32:17.309', NULL),
+    (32, 'Espresso Con Panna', '2023-11-08 17:32:17.309', NULL),
+    (33, 'Butter Coffee', '2023-11-08 17:32:17.309', NULL),
+    (34, 'Red Eye', '2023-11-08 17:32:17.309', NULL),
+    (35, 'Cinnamon Latte', '2023-11-08 17:32:17.309', NULL),
+    (36, 'Golden Latte', '2023-11-08 17:32:17.309', NULL);
