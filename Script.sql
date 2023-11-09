@@ -176,8 +176,7 @@ VALUES
     (19, 'Promo 19', 'DISCOUNT15', 'Diskon 15%', 0.15, TRUE, 25000, 45000, '2023-11-08 17:32:17.309', NULL),
     (20, 'Promo 20', 'SAVETODAY', 'Potongan 20%', 0.20, TRUE, 30000, 50000, '2023-11-08 17:32:17.309', NULL);
     
-   
-   INSERT INTO "products" ("id", "name", "price", "image", "description", "discount", "isRecommended", "qty", "isActive", "createdAt", "updatedAt")
+INSERT INTO "products" ("id", "name", "price", "image", "description", "discount", "isRecommended", "qty", "isActive", "createdAt", "updatedAt")
 VALUES
     (1, 'Cappuccino', 15000, 'cappuccino.jpg', 'Cappuccino is a coffee drink that is made with espresso and steamed milk.', 5000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
     (2, 'Latte', 16000, 'latte.jpg', 'Latte is a coffee drink made with espresso and a large amount of steamed milk.', 6000, TRUE, 120, TRUE, '2023-11-08 17:32:17.309', NULL),
@@ -228,4 +227,5 @@ VALUES
     (47, 'Lavender Latte', 21000, 'lavenderlatte.jpg', 'Latte dengan aroma lavender', 7000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
     (48, 'Caramel Macchiato', 19000, 'caramelmachiato.jpg', 'Macchiato dengan karamel', 6000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
     (49, 'Hazelnut Latte', 20000, 'hazelnutlatte.jpg', 'Latte dengan rasa hazelnut', 7000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL);
+    
     
