@@ -18,7 +18,7 @@ create table if not exists "users"(
 create table if not exists "products"(
 "id" serial primary key,
 "name" varchar (255) not null,
-"price" numeric (12, 2) not null,
+"price" int not null,
 "image" varchar (255),
 "description" text,
 "discount" float,
@@ -32,7 +32,7 @@ create table if not exists "products"(
 create table if not exists "productSize"(
 "id" serial primary key,
 "size" "size_type" default null,
-"additionalPrice" numeric (12, 2) not null,
+"additionalPrice" int not null,
 "createdAt" timestamp default now(),
 "updatedAt" timestamp 
 );
@@ -40,7 +40,7 @@ create table if not exists "productSize"(
 create table if not exists "productVariant"(
 "id" serial primary key,
 "name" varchar (15) not null,
-"additionalPrice" numeric (12, 2) not null,
+"additionalPrice" int not null,
 "createdAt" timestamp default now(),
 "updatedAt" timestamp 
 );
@@ -109,10 +109,10 @@ create table if not exists "orders"(
 "usersId" int not null,
 foreign key ("usersId") references "users"(id),
 "orderNumber" varchar (80),
-"promoId" int not null,
+"promoId" int,
 foreign key ("promoId") references "promo"(id),
-"total" numeric (12, 2) not null,
-"taxAmount" numeric (12, 2) not null,
+"total" int not null,
+"taxAmount" int not null,
 "status" "status_type" default null,
 "deliveryAddress" varchar (255) not null,
 "fullName" varchar (255) not null,
@@ -132,6 +132,7 @@ foreign key ("productSizeId") references "productSize"(id),
 "productVariantId" int not null,
 foreign key ("productVariantId") references "productVariant"(id),
 "qty" int not null,
+"subTotal" int not null,
 "createdAt" timestamp default now(),
 "updatedAt" timestamp 
 );
