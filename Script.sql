@@ -232,10 +232,10 @@ VALUES
     
 INSERT INTO "productSize" ("id", "size", "additionalPrice", "createdAt", "updatedAt")
 VALUES
-   (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
-   (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
-   (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
-   
+    (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
+    (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
+    (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
+    
 INSERT INTO "productVariant" ("id", "name", "additionalPrice", "createdAt", "updatedAt")
 VALUES  
 	(1, 'Ice', 2000, 2023-11-09 08:49:15.782, NULL)
@@ -248,7 +248,7 @@ VALUES
     (3, 'Minuman Cokelat', '2023-11-08 17:32:17.309', NULL),
     (4, 'Minuman Teh', '2023-11-08 17:32:17.309', NULL),
     (5, 'Minuman Smoothie', '2023-11-08 17:32:17.309', NULL);
-   
+    
 INSERT INTO "tags" ("id", "name", "createdAt", "updatedAt")
 VALUES
     (1, 'Kopi', '2023-11-08 17:32:17.309', NULL),
@@ -312,7 +312,7 @@ VALUES
 	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
 	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
 	(9, 14, 1, '2023-11-10 08:28:21.220', NULL)
-	(10, 15, 1, '2023-11-10 08:28:21.220'7, NULL)
+	(10, 15, 1, '2023-11-10 08:28:21.220', NULL)
 	(11, 16, 1, '2023-11-10 08:28:21.220', NULL)
 	(12, 17, 1, '2023-11-10 08:28:21.220', NULL);
 	
