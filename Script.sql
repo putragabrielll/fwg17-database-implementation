@@ -176,7 +176,7 @@ VALUES
     (19, 'Promo 19', 'DISCOUNT15', 'Diskon 15%', 0.15, TRUE, 25000, 45000, '2023-11-08 17:32:17.309', NULL),
     (20, 'Promo 20', 'SAVETODAY', 'Potongan 20%', 0.20, TRUE, 30000, 50000, '2023-11-08 17:32:17.309', NULL);
     
-    
+   
 INSERT INTO "products" ("id", "name", "price", "image", "description", "discount", "isRecommended", "qty", "isActive", "createdAt", "updatedAt")
 VALUES
     (1, 'Cappuccino', 15000, 'cappuccino.jpg', 'Cappuccino is a coffee drink that is made with espresso and steamed milk.', 5000, TRUE, 100, TRUE, '2023-11-08 17:32:17.309', NULL),
@@ -231,10 +231,10 @@ VALUES
     
 INSERT INTO "productSize" ("id", "size", "additionalPrice", "createdAt", "updatedAt")
 VALUES
-    (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
-    (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
-    (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
-    
+   (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
+   (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
+   (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
+   
 INSERT INTO "productVariant" ("id", "name", "additionalPrice", "createdAt", "updatedAt")
 VALUES  
 	(1, 'Ice', 2000, 2023-11-09 08:49:15.782, NULL)
@@ -247,7 +247,7 @@ VALUES
     (3, 'Minuman Cokelat', '2023-11-08 17:32:17.309', NULL),
     (4, 'Minuman Teh', '2023-11-08 17:32:17.309', NULL),
     (5, 'Minuman Smoothie', '2023-11-08 17:32:17.309', NULL);
-    
+   
 INSERT INTO "tags" ("id", "name", "createdAt", "updatedAt")
 VALUES
     (1, 'Kopi', '2023-11-08 17:32:17.309', NULL),
@@ -286,3 +286,49 @@ VALUES
     (34, 'Red Eye', '2023-11-08 17:32:17.309', NULL),
     (35, 'Cinnamon Latte', '2023-11-08 17:32:17.309', NULL),
     (36, 'Golden Latte', '2023-11-08 17:32:17.309', NULL);
+    
+INSERT INTO "products" ("id", "productId", "tags", "createdAt", "updatedAt")
+VALUES
+	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
+	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
+	(3, 6, 1, '2023-11-10 08:28:21.220', NULL)
+	(4, 7, 1, '2023-11-10 08:28:21.220', NULL)
+	(5, 9, 1, '2023-11-10 08:28:21.220', NULL)
+	(6, 10, 1, '2023-11-10 08:28:21.220', NULL)
+	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
+	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
+	(9, 16, 1, '2023-11-10 08:28:21.220', NULL)
+	(10, 17, 1, '2023-11-10 08:28:21.220', NULL);
+	
+INSERT INTO "products" ("id", "productId", "categoriesId", "createdAt", "updatedAt")
+VALUES
+	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
+	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
+	(3, 6, 1, '2023-11-10 08:28:21.220', NULL)
+	(4, 7, 1, '2023-11-10 08:28:21.220', NULL)
+	(5, 9, 1, '2023-11-10 08:28:21.220', NULL)
+	(6, 10, 1, '2023-11-10 08:28:21.220', NULL)
+	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
+	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
+	(9, 14, 1, '2023-11-10 08:28:21.220', NULL)
+	(10, 15, 1, '2023-11-10 08:28:21.220'7, NULL)
+	(11, 16, 1, '2023-11-10 08:28:21.220', NULL)
+	(12, 17, 1, '2023-11-10 08:28:21.220', NULL);
+	
+INSERT INTO "productRatings"  ("id", "productId", "rate", "reviewMessege", "userId", "createdAt", "updatedAt")
+VALUES
+	(1, 8, 5, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(5, 21, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(6, 22, 3, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL)
+	(7, 1, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
+	(8, 3, 2, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(9, 6, 1, 'Kopinya enak banget.', 6, '2023-11-10 08:28:21.220', NULL)
+	(10, 2, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
+	(11, 7, 2, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
+	(12, 5, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(13, 6, 2, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
+	(14, 8, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
+	(15, 4, 5, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL)
+	(16, 3, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
+	(17, 2, 1, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(18, 9, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL);
