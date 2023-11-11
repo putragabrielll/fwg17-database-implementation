@@ -389,17 +389,17 @@ VALUES
 	 '#001-10112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 * 0.1 as tax 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ), 
 	 'on-progress', 
@@ -413,16 +413,16 @@ VALUES
 	 '#002-10112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "p"."price" from "products" "p" where "id"=3) "a" , 
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 * 0.1 as tax 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "p"."price" from "products" "p" where "id"=3) "a" , 
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ), 
@@ -439,16 +439,16 @@ VALUES
 	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
 	 ), 
 	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
 	 ), 
 	 'on-progress', 
 	 'Bekasi', 
@@ -510,7 +510,30 @@ VALUES
 -- Customer 3 dengan 5 order didalam nya masing masing 5 barang
 INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
 VALUES 
-	(1, 1, '#001-08112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Gabriel', 'puragmahk@gmail.com', '2023-11-10 08:42:57.996', null);
+	(5, 
+	 4, 
+	 '#001-11112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 '123 Main St', 
+	 'John Doe', 
+	 'johndoe@example.com', 
+	 '2023-11-11 06:42:57.996', 
+	 null);
 
 
 
