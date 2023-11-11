@@ -338,55 +338,174 @@ VALUES
 INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
 VALUES 
 	(1, 
-	1, 
-	'#001-08112023-0001', 
-	null, 
-	(
+	 1, 
+	 '#001-08112023-0001', 
+	 null, 
+	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
 			from 
 				(select "p"."price" from "products" "p" where "id"=1) "a" , 
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
-	), 
-	(
+	 ), 
+	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
 			from 
 				(select "p"."price" from "products" "p" where "id"=1) "a" , 
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
-	), 
-	'on-progress', 
-	'Bekasi', 
-	'Gabriel', 
-	'puragmahk@gmail.com', 
-	'2023-11-10 08:42:57.996', 
-	null);
+	 ), 
+	 'on-progress', 
+	 'Bekasi', 
+	 'Gabriel', 
+	 'puragmahk@gmail.com', 
+	 '2023-11-10 08:42:57.996', 
+	 null);
 
 INSERT INTO "orderDetails" ("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
 VALUES 
 	(1, --id
-	1, --ordersId
-	1, --productId 15 x 2 = 30 sudah
-	1, --productSizeId 10 x 2 = 20 sudah
-	1, --productVariantId 2 x 2 = 4
-	2, --qty
-	(
+	 1, --ordersId
+	 1, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
 			from 
 				(select "p"."price" from "products" "p" where "id"=1) "a" , 
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
-	),
-	'2023-11-10 08:42:57.996', 
-	null);
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null);
 	
 	
 -- Customer 2 dengan 3 order didalam nya masing masing 1 barang
 INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
 VALUES 
-	(2, 3, '#001-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null)
-	(3, 3, '#002-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null)
-	(4, 3, '#003-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null);
+	(2, 
+	 3, 
+	 '#001-10112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 'Bekasi', 
+	 'Handoyo', 
+	 'handoyo@gmail.com', 
+	 '2023-11-10 08:42:57.996', 
+	 null)
+	(3, 
+	 3, 
+	 '#002-10112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 'Bekasi', 
+	 'Handoyo', 
+	 'handoyo@gmail.com', 
+	 '2023-11-10 08:42:57.996', 
+	 null)
+	(4, 
+	 3, 
+	 '#003-10112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 'Bekasi', 
+	 'Handoyo', 
+	 'handoyo@gmail.com', 
+	 '2023-11-10 08:42:57.996', 
+	 null);
+	
+INSERT INTO "orderDetails" ("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
+VALUES 
+	(2, --id
+	 2, --ordersId
+	 2, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null)
+	(3, --id
+	 3, --ordersId
+	 3, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=3) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null)
+	(4, --id
+	 4, --ordersId
+	 2, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null);
+	
+
 
 -- Customer 3 dengan 5 order didalam nya masing masing 5 barang
 INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
