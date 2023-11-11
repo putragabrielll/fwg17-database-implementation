@@ -116,7 +116,7 @@ foreign key ("promoId") references "promo"(id),
 "status" "status_type" default null,
 "deliveryAddress" varchar (255) not null,
 "fullName" varchar (255) not null,
-"email" varchar (50) unique not null,
+"email" varchar (50) not null,
 "createdAt" timestamp default now(),
 "updatedAt" timestamp 
 );
@@ -232,14 +232,14 @@ VALUES
     
 INSERT INTO "productSize" ("id", "size", "additionalPrice", "createdAt", "updatedAt")
 VALUES
-    (1, 'small', 10000, 2023-11-09 08:48:24.547, NULL)
-    (2, 'medium', 15000, 2023-11-09 08:48:24.552, NULL)
-    (3, 'large', 20000, 2023-11-09 08:48:24.553, NULL);
-    
+   (1, 'small', 10000, '2023-11-09 08:48:24.547', NULL)
+   (2, 'medium', 15000, '2023-11-09 08:48:24.552', NULL)
+   (3, 'large', 20000, '2023-11-09 08:48:24.553', NULL);
+   
 INSERT INTO "productVariant" ("id", "name", "additionalPrice", "createdAt", "updatedAt")
 VALUES  
-	(1, 'Ice', 2000, 2023-11-09 08:49:15.782, NULL)
-	(2, 'Hot', 1000, 2023-11-09 08:49:15.785, NULL);
+	(1, 'Ice', 2000, '2023-11-09 08:49:15.782', NULL)
+	(2, 'Hot', 1000, '2023-11-09 08:49:15.785', NULL);
 	
 INSERT INTO "categories" ("id", "name", "createdAt", "updatedAt")
 VALUES
@@ -248,7 +248,7 @@ VALUES
     (3, 'Minuman Cokelat', '2023-11-08 17:32:17.309', NULL),
     (4, 'Minuman Teh', '2023-11-08 17:32:17.309', NULL),
     (5, 'Minuman Smoothie', '2023-11-08 17:32:17.309', NULL);
-    
+   
 INSERT INTO "tags" ("id", "name", "createdAt", "updatedAt")
 VALUES
     (1, 'Kopi', '2023-11-08 17:32:17.309', NULL),
@@ -288,7 +288,7 @@ VALUES
     (35, 'Cinnamon Latte', '2023-11-08 17:32:17.309', NULL),
     (36, 'Golden Latte', '2023-11-08 17:32:17.309', NULL);
     
-INSERT INTO "products" ("id", "productId", "tags", "createdAt", "updatedAt")
+INSERT INTO "productTags" ("id", "productId", "tags", "createdAt", "updatedAt")
 VALUES
 	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
 	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
@@ -301,7 +301,7 @@ VALUES
 	(9, 16, 1, '2023-11-10 08:28:21.220', NULL)
 	(10, 17, 1, '2023-11-10 08:28:21.220', NULL);
 	
-INSERT INTO "products" ("id", "productId", "categoriesId", "createdAt", "updatedAt")
+INSERT INTO "productCategories" ("id", "productId", "categoriesId", "createdAt", "updatedAt")
 VALUES
 	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
 	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
@@ -312,7 +312,7 @@ VALUES
 	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
 	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
 	(9, 14, 1, '2023-11-10 08:28:21.220', NULL)
-	(10, 15, 1, '2023-11-10 08:28:21.220', NULL)
+	(10, 15, 1, '2023-11-10 08:28:21.220'7, NULL)
 	(11, 16, 1, '2023-11-10 08:28:21.220', NULL)
 	(12, 17, 1, '2023-11-10 08:28:21.220', NULL);
 	
@@ -333,3 +333,78 @@ VALUES
 	(16, 3, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
 	(17, 2, 1, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
 	(18, 9, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL);
+
+-- Customer 1 dengan 1 barang
+INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
+VALUES 
+	(1, 
+	1, 
+	'#001-08112023-0001', 
+	null, 
+	(
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	), 
+	(
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	), 
+	'on-progress', 
+	'Bekasi', 
+	'Gabriel', 
+	'puragmahk@gmail.com', 
+	'2023-11-10 08:42:57.996', 
+	null);
+
+INSERT INTO "orderDetails" ("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
+VALUES 
+	(1, --id
+	1, --ordersId
+	1, --productId 15 x 2 = 30 sudah
+	1, --productSizeId 10 x 2 = 20 sudah
+	1, --productVariantId 2 x 2 = 4
+	2, --qty
+	(
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	),
+	'2023-11-10 08:42:57.996', 
+	null);
+	
+	
+-- Customer 2 dengan 3 order didalam nya masing masing 1 barang
+INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
+VALUES 
+	(2, 3, '#001-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null)
+	(3, 3, '#002-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null)
+	(4, 3, '#003-10112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Handoyo', 'handoyo@gmail.com', '2023-11-10 08:42:57.996', null);
+
+-- Customer 3 dengan 5 order didalam nya masing masing 5 barang
+INSERT INTO "orders" ("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
+VALUES 
+	(1, 1, '#001-08112023-0001', null, 30000, 3000, 'on-progress', 'Bekasi', 'Gabriel', 'puragmahk@gmail.com', '2023-11-10 08:42:57.996', null);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
