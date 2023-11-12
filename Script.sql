@@ -515,18 +515,82 @@ VALUES
 	 '#001-11112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=4) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=4) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 6 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=6) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=7) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 * 0.1 as tax 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") * 0.1 as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=4) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=4) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 6 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=6) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=7) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 'on-progress', 
 	 '123 Main St', 
@@ -539,18 +603,82 @@ VALUES
 	 '#002-11112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=10) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 8 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=11) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=12) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") * 0.1 as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=10) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 8 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=11) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=12) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 'on-progress', 
 	 '123 Main St', 
@@ -563,18 +691,82 @@ VALUES
 	 '#003-11112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=2) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=10) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=7) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") * 0.1 as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=2) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=10) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=5) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=7) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 'on-progress', 
 	 '123 Main St', 
@@ -587,18 +779,82 @@ VALUES
 	 '#004-11112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=3) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=4) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=11) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=12) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d5";
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") * 0.1 as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=3) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=4) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=11) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=12) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d5";
 	 ), 
 	 'on-progress', 
 	 '123 Main St', 
@@ -611,18 +867,82 @@ VALUES
 	 '#005-11112023-0001', 
 	 null, 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=2) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=3) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=1) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 (
- 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+ 		select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") * 0.1 as total
 			from 
-				(select "p"."price" from "products" "p" where "id"=1) "a" , 
-				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
-				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				(
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=9) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d1",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=2) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+				 ) "d2",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=3) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d3",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=1) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d4",
+				 (
+			 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+						from 
+							(select "p"."price" from "products" "p" where "id"=8) "a" , 
+							(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+							(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+				 ) "d5";
 	 ), 
 	 'on-progress', 
 	 '123 Main St', 
@@ -630,7 +950,7 @@ VALUES
 	 'johndoe@example.com', 
 	 '2023-11-11 06:42:57.996', 
 	 null);
-
+	
 
 INSERT INTO "orderDetails" ("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
 VALUES -- order id 5
@@ -1010,14 +1330,45 @@ VALUES -- order id 5
 	 '2023-11-10 08:42:57.996',
 	 null);
 	 
-
-
-
-
-
-
-
-
-
-
-
+	 
+	 
+	
+	 
+-- Debug
+select	("d1"."total" + "d2"."total" + "d3"."total" + "d4"."total" + "d5"."total") as total
+from 
+	(
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=9) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ) "d1",
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=10) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ) "d2",
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 8 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=11) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ) "d3",
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=12) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ) "d4",
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=8) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ) "d5";
