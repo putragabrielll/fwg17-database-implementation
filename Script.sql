@@ -290,48 +290,48 @@ VALUES
     
 INSERT INTO "productTags" ("id", "productId", "tags", "createdAt", "updatedAt")
 VALUES
-	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
-	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
-	(3, 6, 1, '2023-11-10 08:28:21.220', NULL)
-	(4, 7, 1, '2023-11-10 08:28:21.220', NULL)
-	(5, 9, 1, '2023-11-10 08:28:21.220', NULL)
-	(6, 10, 1, '2023-11-10 08:28:21.220', NULL)
-	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
-	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
-	(9, 16, 1, '2023-11-10 08:28:21.220', NULL)
+	(1, 1, 1, '2023-11-10 08:28:21.220', NULL),
+	(2, 3, 1, '2023-11-10 08:28:21.220', NULL),
+	(3, 6, 1, '2023-11-10 08:28:21.220', NULL),
+	(4, 7, 1, '2023-11-10 08:28:21.220', NULL),
+	(5, 9, 1, '2023-11-10 08:28:21.220', NULL),
+	(6, 10, 1, '2023-11-10 08:28:21.220', NULL),
+	(7, 11, 1, '2023-11-10 08:28:21.220', NULL),
+	(8, 12, 1, '2023-11-10 08:28:21.220', NULL),
+	(9, 16, 1, '2023-11-10 08:28:21.220', NULL),
 	(10, 17, 1, '2023-11-10 08:28:21.220', NULL);
 	
 INSERT INTO "productCategories" ("id", "productId", "categoriesId", "createdAt", "updatedAt")
 VALUES
-	(1, 1, 1, '2023-11-10 08:28:21.220', NULL)
-	(2, 3, 1, '2023-11-10 08:28:21.220', NULL)
-	(3, 6, 1, '2023-11-10 08:28:21.220', NULL)
-	(4, 7, 1, '2023-11-10 08:28:21.220', NULL)
-	(5, 9, 1, '2023-11-10 08:28:21.220', NULL)
-	(6, 10, 1, '2023-11-10 08:28:21.220', NULL)
-	(7, 11, 1, '2023-11-10 08:28:21.220', NULL)
-	(8, 12, 1, '2023-11-10 08:28:21.220', NULL)
-	(9, 14, 1, '2023-11-10 08:28:21.220', NULL)
-	(10, 15, 1, '2023-11-10 08:28:21.220'7, NULL)
-	(11, 16, 1, '2023-11-10 08:28:21.220', NULL)
+	(1, 1, 1, '2023-11-10 08:28:21.220', NULL),
+	(2, 3, 1, '2023-11-10 08:28:21.220', NULL),
+	(3, 6, 1, '2023-11-10 08:28:21.220', NULL),
+	(4, 7, 1, '2023-11-10 08:28:21.220', NULL),
+	(5, 9, 1, '2023-11-10 08:28:21.220', NULL),
+	(6, 10, 1, '2023-11-10 08:28:21.220', NULL),
+	(7, 11, 1, '2023-11-10 08:28:21.220', NULL),
+	(8, 12, 1, '2023-11-10 08:28:21.220', NULL),
+	(9, 14, 1, '2023-11-10 08:28:21.220', NULL),
+	(10, 15, 1, '2023-11-10 08:28:21.220'7, NULL),
+	(11, 16, 1, '2023-11-10 08:28:21.220', NULL),
 	(12, 17, 1, '2023-11-10 08:28:21.220', NULL);
 	
 INSERT INTO "productRatings"  ("id", "productId", "rate", "reviewMessege", "userId", "createdAt", "updatedAt")
 VALUES
-	(1, 8, 5, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
-	(5, 21, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
-	(6, 22, 3, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL)
-	(7, 1, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
-	(8, 3, 2, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
-	(9, 6, 1, 'Kopinya enak banget.', 6, '2023-11-10 08:28:21.220', NULL)
-	(10, 2, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
-	(11, 7, 2, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
-	(12, 5, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
-	(13, 6, 2, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
-	(14, 8, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL)
-	(15, 4, 5, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL)
-	(16, 3, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL)
-	(17, 2, 1, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL)
+	(1, 8, 5, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL),
+	(5, 21, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL),
+	(6, 22, 3, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL),
+	(7, 1, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL),
+	(8, 3, 2, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL),
+	(9, 6, 1, 'Kopinya enak banget.', 6, '2023-11-10 08:28:21.220', NULL),
+	(10, 2, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL),
+	(11, 7, 2, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL),
+	(12, 5, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL),
+	(13, 6, 2, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL),
+	(14, 8, 3, 'Kopinya enak banget.', 5, '2023-11-10 08:28:21.220', NULL),
+	(15, 4, 5, 'Kopinya enak banget.', 3, '2023-11-10 08:28:21.220', NULL),
+	(16, 3, 5, 'Kopinya enak banget.', 4, '2023-11-10 08:28:21.220', NULL),
+	(17, 2, 1, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL),
 	(18, 9, 4, 'Kopinya enak banget.', 1, '2023-11-10 08:28:21.220', NULL);
 
 -- Customer 1 dengan 1 barang
@@ -407,7 +407,7 @@ VALUES
 	 'Handoyo', 
 	 'handoyo@gmail.com', 
 	 '2023-11-10 08:42:57.996', 
-	 null)
+	 null),
 	(3, 
 	 3, 
 	 '#002-10112023-0001', 
@@ -431,7 +431,7 @@ VALUES
 	 'Handoyo', 
 	 'handoyo@gmail.com', 
 	 '2023-11-10 08:42:57.996', 
-	 null)
+	 null),
 	(4, 
 	 3, 
 	 '#003-10112023-0001', 
@@ -473,7 +473,7 @@ VALUES
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ),
 	 '2023-11-10 08:42:57.996', 
-	 null)
+	 null),
 	(3, --id
 	 3, --ordersId
 	 3, --productId 15 x 2 = 30 sudah
@@ -488,7 +488,7 @@ VALUES
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ),
 	 '2023-11-10 08:42:57.996', 
-	 null)
+	 null),
 	(4, --id
 	 4, --ordersId
 	 2, --productId 15 x 2 = 30 sudah
@@ -515,6 +515,102 @@ VALUES
 	 '#001-11112023-0001', 
 	 null, 
 	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=4) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=4) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 '123 Main St', 
+	 'John Doe', 
+	 'johndoe@example.com', 
+	 '2023-11-11 06:42:57.996', 
+	 null),
+	(6, 
+	 4, 
+	 '#002-11112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 '123 Main St', 
+	 'John Doe', 
+	 'johndoe@example.com', 
+	 '2023-11-11 06:42:57.996', 
+	 null),
+	(7, 
+	 4, 
+	 '#003-11112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 '123 Main St', 
+	 'John Doe', 
+	 'johndoe@example.com', 
+	 '2023-11-11 06:42:57.996', 
+	 null),
+	(8, 
+	 4, 
+	 '#004-11112023-0001', 
+	 null, 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 * 0.1 as tax 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ), 
+	 'on-progress', 
+	 '123 Main St', 
+	 'John Doe', 
+	 'johndoe@example.com', 
+	 '2023-11-11 06:42:57.996', 
+	 null),
+	(9, 
+	 4, 
+	 '#005-11112023-0001', 
+	 null, 
+	 (
  		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
 			from 
 				(select "p"."price" from "products" "p" where "id"=1) "a" , 
@@ -536,9 +632,384 @@ VALUES
 	 null);
 
 
-
-
-
+INSERT INTO "orderDetails" ("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
+VALUES -- order id 5
+	(5, --id
+	 5, --ordersId
+	 4, --productId 15 x 2 = 30 sudah
+	 3, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=4) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(6, --id
+	 5, --ordersId
+	 5, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=5) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(7, --id
+	 5, --ordersId
+	 6, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 6, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 6 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=6) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(8, --id
+	 5, --ordersId
+	 7, --productId 15 x 2 = 30 sudah
+	 3, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 4, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=7) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(9, --id
+	 5, --ordersId
+	 8, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=8) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),-- order id 6
+	(10, --id
+	 6, --ordersId
+	 9, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=9) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(11, --id
+	 6, --ordersId
+	 10, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=10) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(12, --id
+	 6, --ordersId
+	 11, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 8, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 8 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=11) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(13, --id
+	 6, --ordersId
+	 12, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=12) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(14, --id
+	 6, --ordersId
+	 8, --productId 15 x 2 = 30 sudah
+	 3, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=8) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),-- order id 7
+	(15, --id
+	 7, --ordersId
+	 5, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=5) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(16, --id
+	 7, --ordersId
+	 2, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(17, --id
+	 7, --ordersId
+	 10, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=10) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(18, --id
+	 7, --ordersId
+	 5, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=5) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(19, --id
+	 7, --ordersId
+	 7, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=7) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),-- order id 8
+	(20, --id
+	 8, --ordersId
+	 9, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=9) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(21, --id
+	 8, --ordersId
+	 3, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=3) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(22, --id
+	 8, --ordersId
+	 4, --productId 15 x 2 = 30 sudah
+	 2, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=4) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(23, --id
+	 8, --ordersId
+	 11, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=11) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(24, --id
+	 8, --ordersId
+	 12, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=12) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null), -- order id 9
+	(25, --id
+	 9, --ordersId
+	 9, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 3, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 3 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=9) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(26, --id
+	 9, --ordersId
+	 2, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 2, --productVariantId 2 x 2 = 4
+	 4, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=2) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=2) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(27, --id
+	 9, --ordersId
+	 3, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 2, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 2 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=3) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(28, --id
+	 9, --ordersId
+	 5, --productId 15 x 2 = 30 sudah
+	 1, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 1, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=1) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=1) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996', 
+	 null),
+	(29, --id
+	 9, --ordersId
+	 8, --productId 15 x 2 = 30 sudah
+	 3, --productSizeId 10 x 2 = 20 sudah
+	 1, --productVariantId 2 x 2 = 4
+	 4, --qty
+	 (
+ 		select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 4 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=8) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
+	 ),
+	 '2023-11-10 08:42:57.996',
+	 null);
+	 
 
 
 
