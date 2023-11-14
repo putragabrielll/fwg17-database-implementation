@@ -1372,3 +1372,53 @@ from
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ) "d5";
+	 
+	 
+	 
+
+-- latihan 1
+select * from "orderDetails" "od"
+inner join "orders" "o" on "od"."ordersId" = "o"."id"
+inner join "users" "u" on "u"."id" = "o"."usersId";
+
+select * from "products" "p"
+
+-- latihan 2 
+-- bikin kondisi seperti IF ELSE
+select "u"."fullName", "u"."role", 
+case when "role" = 'admin' then 'contoh'
+else "fullName"
+end as "dataBaru"
+from "users" "u";
+
+-- latihan 3
+-- fungsi "coalesce" => mengisi row data pada saat data tersebut bernilai NULL atau kosong
+SELECT "u"."name", coalesce("u"."discount", '696969') FROM "products" "u"
+
+-- latihan 4
+SELECT max("discount") FROM"products" "p"
+
+-- latihan 5 "p"."name", "c"."name", "pm"."name", "p"."price"
+SELECT sum(price*qty) AS "total1"  FROM "products" "p"
+
+-- latihan 6
+SELECT * FROM "users" "u";
+
+select * from "products" "p";
+
+SELECT * FROM "products" "p" WHERE "name"='Latte';
+SELECT * FROM "products" "p" WHERE "name" LIKE 'Latte';
+SELECT * FROM "products" "p" WHERE "name" ILIKE 'latte';
+
+SELECT * FROM "products" "p"
+INNER JOIN "orderDetails" "od" ON "od"."productId" = "p"."id"
+INNER JOIN "orders" "o" ON "od"."ordersId" = "o"."id"
+INNER JOIN "promo" "pm" ON "o"."promoId" = "pm"."id"
+INNER JOIN "productCategories" "pc" ON "pc"."productId" = "p"."id"
+INNER JOIN "categories" "c" ON "pc"."categoriesId" = "c"."id"
+WHERE "p"."name"='Cappuccino' AND "c"."name"='Kopi Hitam' AND  "pm"."name"='Promo 1' AND "p"."price"='15000';
+
+
+-- Drop default pada type column
+ALTER TABLE "users"
+ALTER COLUMN "phoneNumber" DROP default;
