@@ -1376,14 +1376,14 @@ from
 	 
 	 
 
--- latihan 1
+-- latihan mandiri 1
 select * from "orderDetails" "od"
 inner join "orders" "o" on "od"."ordersId" = "o"."id"
 inner join "users" "u" on "u"."id" = "o"."usersId";
 
 select * from "products" "p"
 
--- latihan 2 
+-- latihan mandiri 2 
 -- bikin kondisi seperti IF ELSE
 select "u"."fullName", "u"."role", 
 case when "role" = 'admin' then 'contoh'
@@ -1391,17 +1391,17 @@ else "fullName"
 end as "dataBaru"
 from "users" "u";
 
--- latihan 3
+-- latihan mandiri 3
 -- fungsi "coalesce" => mengisi row data pada saat data tersebut bernilai NULL atau kosong
 SELECT "u"."name", coalesce("u"."discount", '696969') FROM "products" "u"
 
--- latihan 4
+-- latihan mandiri 4
 SELECT max("discount") FROM"products" "p"
 
--- latihan 5 "p"."name", "c"."name", "pm"."name", "p"."price"
+-- latihan mandiri 5
 SELECT sum(price*qty) AS "total1"  FROM "products" "p"
 
--- latihan 6
+-- latihan mandiri 6
 SELECT * FROM "users" "u";
 
 select * from "products" "p";
