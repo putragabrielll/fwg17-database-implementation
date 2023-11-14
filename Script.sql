@@ -1372,9 +1372,111 @@ from
 				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=3) "b", 
 				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"
 	 ) "d5";
+
+
+
+
+-- CRUD table users
+SELECT * FROM "users";
+
+INSERT INTO "users"
+("id", "fullName", "email", "phoneNumber", "address", "picture", "role", "password", "createdAt", "updatedAt")
+VALUES(15, 'Jacob Edward', 'jacosb@example.com', '8237483262234', '1212 Pineapple St', 'jack.jpg', 'customer', 'password1023', '2023-11-14 14:40:12.533', NULL);
 	 
+UPDATE "users"
+SET "fullName"='Jacob tra', "email"='jacobs@example.com', "phoneNumber"='085157744948', "address"='Bandung', "picture"='foto.jpg', "role"='customer', "password"='ujian_ini_berat', "createdAt"='2023-11-14 14:40:12.533', "updatedAt"=now() 
+WHERE "id"=14;
+
+DELETE FROM "users" WHERE "id"=15;
 	 
-	 
+
+-- CRUD table products
+SELECT * FROM "products";
+
+INSERT INTO "products"
+("id", "name", "price", "image", "description", "discount", "isRecommended", "qty", "isActive", "createdAt", "updatedAt")
+VALUES(50, 'Soda Gembari', 15000, 'soda-gembira.png', 'campuran fanta dengan susu putih alami', 4000, true, 24, true, '2023-11-14 14:53:37.809', NULL);
+
+UPDATE "products"
+SET "name"='Soda Penggembira', "price"=13000, "image"='gembira.png', "description"='campuran fanta dengan susu putih alami langsung dari peternakan', "discount"=2000, "isRecommended"=true, "qty"=89, "isActive"=true, "createdAt"='2023-11-14 14:53:37.809', "updatedAt"=now() 
+WHERE "id"=50;
+
+DELETE FROM "products" WHERE "id"=50;
+
+
+-- CRUD table promo
+SELECT * FROM "promo"
+
+INSERT INTO "promo"
+("id", "name", "code", "description", "percentage", "isExpired", "maximumPromo", "minimumAmount", "createdAt", "updatedAt")
+VALUES(22, 'MURAHMERIAH', 'MRHMRA25', 'Diskon 25%', 0.25, true, 10000, 30000, '2023-11-14 15:04:32.315', NULL);
+
+UPDATE "promo"
+SET "name"='MURAHMERIAH', "code"='MRHMRA25', "description"='Diskon 25%', "percentage"=0.25, "isExpired"=true, "maximumPromo"=10000, "minimumAmount"=30000, "createdAt"='2023-11-14 15:04:32.315', "updatedAt"=now() 
+WHERE "id"=22;
+
+DELETE FROM "promo" WHERE "id"=22;
+
+
+-- CRUD table orders
+SELECT * FROM "orders"
+
+INSERT INTO "orders"
+("id", "usersId", "orderNumber", "promoId", "total", "taxAmount", "status", "deliveryAddress", "fullName", "email", "createdAt", "updatedAt")
+VALUES(13, 14, '#015-14112023-0234', 7, 10000, 5000, 'on-progress', 'Bandung', 'gabriel', 'gabtiel@example.com', '2023-11-14 15:11:56.010', NULL);
+
+UPDATE "orders"
+SET 
+	"usersId"=14, 
+	"orderNumber"='#015-14112023-0234', 
+	"promoId"=7, 
+	"total"=(select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 5 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=50) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"), 
+	"taxAmount"=((select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 5 * 0.1 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=50) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c")), 
+	"status"='on-progress', 
+	"deliveryAddress"='Bandung, lembang', 
+	"fullName"='Harap Bersabar', 
+	"email"='tesdrive@example.com', 
+	"createdAt"='2023-11-14 15:11:56.010', 
+	"updatedAt"=now() 
+WHERE "id"=13;
+
+DELETE FROM "orders" WHERE "id"=13;
+
+
+-- CRUD table orderDetails
+SELECT * FROM "orderDetails"
+
+INSERT INTO "orderDetails"
+("id", "ordersId", "productId", "productSizeId", "productVariantId", "qty", "subTotal", "createdAt", "updatedAt")
+VALUES(30, 13, 50, 2, 1, 5, 13000, '2023-11-14 15:43:40.228', NULL);
+
+UPDATE "orderDetails"
+SET 
+	"ordersId"=13, 
+	"productId"=50, 
+	"productSizeId"=2, 
+	"productVariantId"=1, 
+	"qty"=5, 
+	"subTotal"=(select ("a"."price" + "b"."additionalPrice" + "c"."additionalPrice") * 5 as total 
+			from 
+				(select "p"."price" from "products" "p" where "id"=50) "a" , 
+				(select "ps"."additionalPrice" from "productSize" "ps" where "id"=2) "b", 
+				(select "pv"."additionalPrice" from "productVariant" "pv" where "id"=1) "c"), 
+	"createdAt"='2023-11-14 15:43:40.228', 
+	"updatedAt"=now() 
+WHERE "id"=30;
+
+DELETE FROM "orderDetails" WHERE "id"=30;
+
+
 
 -- latihan mandiri 1
 select * from "orderDetails" "od"
@@ -1407,17 +1509,16 @@ SELECT * FROM "users" "u";
 select * from "products" "p";
 
 SELECT * FROM "products" "p" WHERE "name"='Latte';
-SELECT * FROM "products" "p" WHERE "name" LIKE 'Latte';
+SELECT * FROM "products" "p" WHERE "name" LIKE '%Latte%';
 SELECT * FROM "products" "p" WHERE "name" ILIKE 'latte';
 
-SELECT * FROM "products" "p"
-INNER JOIN "orderDetails" "od" ON "od"."productId" = "p"."id"
-INNER JOIN "orders" "o" ON "od"."ordersId" = "o"."id"
-INNER JOIN "promo" "pm" ON "o"."promoId" = "pm"."id"
-INNER JOIN "productCategories" "pc" ON "pc"."productId" = "p"."id"
-INNER JOIN "categories" "c" ON "pc"."categoriesId" = "c"."id"
-WHERE "p"."name"='Cappuccino' AND "c"."name"='Kopi Hitam' AND  "pm"."name"='Promo 1' AND "p"."price"='15000';
-
+SELECT "p"."name", "c"."name", "pm"."name", "p"."price" FROM "products" "p"
+LEFT JOIN "orderDetails" "od" ON "od"."productId" = "p"."id"
+LEFT JOIN "orders" "o" ON "od"."ordersId" = "o"."id"
+LEFT JOIN "promo" "pm" ON "o"."promoId" = "pm"."id"
+LEFT JOIN "productCategories" "pc" ON "pc"."productId" = "p"."id"
+LEFT JOIN "categories" "c" ON "pc"."categoriesId" = "c"."id"
+WHERE "p"."name" ILIKE 'cappuccino' AND "c"."name" ILIKE 'kopi hitam' AND  "pm"."name" ILIKE 'promo 1' AND "p"."price"='15000';
 
 -- Drop default pada type column
 ALTER TABLE "users"
